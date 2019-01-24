@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * First install Git [there](https://git-scm.com/downloads)
 * Then install the exe composer [there](https://getcomposer.org/download/)
-* `git clone https://github.com/lutfialfiansyah/basictest.git projectname`
+* `git clone https://github.com/lutfialfiansyah/basic_test.git projectname`
 * `cd projectname`
 * `composer install`
 * `php artisan key:generate`
