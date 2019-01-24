@@ -38,18 +38,15 @@ class DashboardController extends Controller
            $user->fill([
             'password' => Hash::make($request->newpassword)
             ])->save();
-           return Response()->json(
-                ['status' => true, 'msg' => 'Password Changed !','type'=>'success','title'=>'Success!!']
-            );  
-           // $request->session()->flash('success', 'Password changed');
-            // return redirect()->route('your.route');
-
+           // return Response()->json(
+           //      ['status' => true, 'msg' => 'Password Changed !','type'=>'success','title'=>'Success!!']
+           //  );  
+            return back()->with('Success','Password Changed !');
         } else {
-        	return Response()->json(
-                ['status' => false, 'msg' => 'Password doed not match !','type'=>'warning','title'=>'Ops!!']
-            );  
-            // $request->session()->flash('error', 'Password does not match');
-            // return redirect()->route('your.route');
+        	// return Response()->json(
+                // ['status' => false, 'msg' => 'Password doed not match !','type'=>'warning','title'=>'Ops!!']
+            // );  
+            return back()->with('Warning','Password doed not match !');
         }
     }
 }

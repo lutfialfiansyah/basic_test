@@ -8,7 +8,21 @@
                 <div class="card-body">
                     <form method="POST" action="{{ url('/changePasswordUpdate/'.Auth::user()->id) }}" id="formchange">
                         @csrf
-
+                @if(Session::has('Success'))
+                    <div class="alert alert-dark"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    {{ Session::get('Success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @elseif(Session::has('Warning'))
+                    <div class="alert alert-danger"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    {{ Session::get('Warning') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
                         <div class="form-group row">
                             <label for="oldpassword" class="col-md-4 col-form-label text-md-right">{{ __('Old Password') }}</label>
 
